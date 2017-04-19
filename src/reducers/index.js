@@ -74,7 +74,7 @@ const tablesReducer = (state = initialTableState, action) => {
 
 				return {
 					...item,
-					dishes: [...item.dishes, {...action.dish, tableId:action.tableId}]
+					dishes: [...item.dishes, {id: v4(), dish: { ...action.dish, tableId:action.tableId } }]
 				};
 			});
 		case actions.REMOVE_DISH_FROM_TABLE:
@@ -85,7 +85,7 @@ const tablesReducer = (state = initialTableState, action) => {
 
 				return {
 					...item,
-					dishes: item.dishes.filter((dish) => dish.id !== action.dishId)
+					dishes: item.dishes.filter((dishItem) => dishItem.id !== action.dishId)
 				};
 			});
 		default: {

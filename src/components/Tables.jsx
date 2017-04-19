@@ -9,7 +9,7 @@ const Tables = ({tables, selectedId, dispatch}) => {
 				key={table.id} 
 				table={table} 
 				onTableClick={() => dispatch(actions.selectTableActionCreator(table.id))}
-				onDishClick={(dish) => dispatch(actions.removeDishFromTableActionCreator(dish.tableId, dish.id))}
+				onDishClick={(tableId, dishId) => dispatch(actions.removeDishFromTableActionCreator(tableId, dishId))}
 			/>
 		);
 	});

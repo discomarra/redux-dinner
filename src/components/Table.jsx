@@ -1,10 +1,9 @@
 import React from "react";
-import {v4} from "uuid";
 
 export default ({table, onTableClick, onDishClick}) => {
-	const dishes = table.dishes.map((dish, index) => {
+	const dishes = table.dishes.map((dishItem, index) => {
 		return (
-			<li key={v4()}><a href="#" onClick={() => onDishClick(dish)}>{dish.name}</a></li>
+			<li key={dishItem.id}><a href="#" onClick={() => onDishClick(dishItem.dish.tableId, dishItem.id)}>{dishItem.dish.name}</a></li>
 		);
 	});
 
